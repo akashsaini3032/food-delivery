@@ -1,0 +1,106 @@
+
+/* AdminDashboard.css */
+:root {
+  --primary-bg: #0e0e10;
+  --card-bg: #1c1c1f;
+  --sidebar-bg: rgba(30, 30, 30, 0.85);
+  --text-main: #e0e0e0;
+  --text-muted: #a0a0a0;
+  --highlight-blue: #42aaff;
+  --highlight-green: #00ffab;
+  --highlight-orange: #ffae42;
+  --highlight-purple: #bb86fc;
+}
+
+#adminheader {
+  background: linear-gradient(90deg, var(--highlight-blue), var(--highlight-purple));
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid var(--highlight-purple);
+}
+
+#adminheader + div {
+  background-color: var(--card-bg);
+  color: var(--text-muted);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#container {
+  display: flex;
+  min-height: 90vh;
+  background-color: var(--primary-bg);
+  color: var(--text-main);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#adminmenu {
+  width: 260px;
+  background-color: var(--sidebar-bg);
+  padding: 1.2rem;
+  backdrop-filter: blur(6px);
+  border-right: 1px solid #2c2c2c;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.6);
+}
+
+#adminmenu .nav-link {
+  color: var(--text-muted) !important;
+  background-color: transparent;
+  padding: 12px 18px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#adminmenu .nav-link::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, var(--highlight-green), var(--highlight-blue));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+  z-index: -1;
+  border-radius: 10px;
+}
+
+#adminmenu .nav-link:hover::before,
+#adminmenu .nav-link.active::before {
+  transform: scaleX(1);
+}
+
+#adminmenu .nav-link:hover,
+#adminmenu .nav-link.active {
+  color: #121212 !important;
+  font-weight: bold;
+}
+
+#admindata {
+  flex: 1;
+  padding: 2rem;
+  background-color: var(--card-bg);
+  box-shadow: inset 0 0 12px rgba(0,0,0,0.4);
+  border-left: 1px solid #2e2e2e;
+}
+
+/* Specific Text Colors for a colorful UI */
+#admindata h1, #admindata h2, #admindata h3 {
+  color: var(--highlight-orange);
+}
+#admindata p, #admindata span {
+  color: var(--text-main);
+}
